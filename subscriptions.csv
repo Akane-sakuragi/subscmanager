@@ -1,0 +1,5 @@
+id,name,category,billingCycle,price,nextBillingDate,frequency
+87a959e4,youtube,趣味,月更新,1500,2026-10-03,高
+d180a1f9,netflix,趣味,月更新,1499,2026-09-29,高
+dbb4e351,任天堂オンライン,趣味,年更新,3000,2027-05-29,高
+0e98ee99,amazon prime,趣味,月更新,600,2026-09-30,中
