@@ -43,7 +43,7 @@ public class ConsoleController {
 
 		Category category = categories[catIndex];
 
-		// 契約サイクル
+		// 契約サイクル（月更新/年更新）
 		System.out.println("--- 契約サイクル ---");
 		System.out.println("請求サイクルを選択してください:");
 
@@ -57,7 +57,7 @@ public class ConsoleController {
 
 		BillingCycle billingCycle = cycles[cycleIndex];
 
-		// サブスク料金
+		// 値段
 		System.out.print("料金 (円): ");
 		int price;
 		while (true) {

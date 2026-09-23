@@ -78,7 +78,7 @@ public class Main {
 				return;
 
 			} else {
-				System.out.println("無効な選択です。0〜4の番号を入力してください。");
+				System.out.println("無効な選択です。0〜6の番号を入力してください。");
 				continue;
 			}
 		}
