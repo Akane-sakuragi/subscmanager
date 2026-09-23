@@ -40,11 +40,6 @@ public class SubscriptionService {
 		return yearlyTotal;
 	}
 
-	// 近日更新予定のアラート対象
-	public List<Subscription> getUpcomingRenewals(int withinDays) {
-		return null;
-	}
-
 	public int calculateWastedYearlyCost() {
 		List<Subscription> subscriptions = repository.findAll();
 		int totalWastedCost = 0;

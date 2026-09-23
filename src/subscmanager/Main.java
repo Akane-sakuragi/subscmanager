@@ -21,47 +21,67 @@ public class Main {
 		System.out.println("=== サブスクリプション管理アプリへようこそ ===");
 		while (true) {
 			System.out.println("\n=== サブスク管理アプリ ===");
-			System.out.println("1. 一覧表示 / 2. 新規登録 / 3. 更新・解約 / 4. 登録済みサブスクの合計費用 / 5. 断捨離診断 / 0. 終了");
+			System.out.println("1. 一覧表示 / 2. 新規登録 / 3. 更新 / 4. 解約 / 5. 登録済みサブスクの合計費用 / 6. 断捨離診断 / 0. 終了");
 			System.out.print("選択 > ");
 
-			String input = scanner.nextLine().trim();
+			int input;
+			while (!scanner.hasNextInt()) {
+				System.out.println("エラー: 数値以外の値が入力されました。");
+				scanner.next();
+				System.out.print("もう一度数値を入力してください: ");
+			}
+			input = scanner.nextInt();
 
-			switch (input) {
-			case "1":
+			if (input == 1) {
 				System.out.println("\n--- 一覧表示 ---");
 				view.showSubscriptionTable(repository.findAll());
-				break;
+				continue;
 
-			case "2":
+			}
+			if (input == 2) {
 				controller.subscCreate();
-				break;
+				continue;
 
-			case "3":
-				System.out.println("\n--- 更新・解約 ---");
-				// TODO: 更新・解約の処理を呼び出す
-				break;
+			}
+			if (input == 3) {
+				System.out.println("\n--- 更新 ---");
+				System.out.print("更新したいサブスクのidを入力してください：");
+				String update_id = scanner.next();
+				repository.updateSubscription(update_id);
+				continue;
 
-			case "4":
+			}
+			if (input == 4) {
+				System.out.println("\n--- 解約 ---");
+				System.out.print("解約したいサブスクのidを入力してください：");
+				String delete_id = scanner.next();
+				repository.deleteSubscription(delete_id);
+				continue;
+
+			}
+			if (input == 5) {
 				System.out.println("\n--- 登録済みサブスクの合計費用 ---");
-				System.out.println("月額費用：" + service.calculateMonthlyTotal() + "円");
-				System.out.println("年額費用：" + service.calculateYearlyTotal() + "円");
-				break;
+				System.out.println("月額費用：" + service.calculateMonthlyTotal() + "円 / 月");
+				System.out.println("年額費用：" + service.calculateYearlyTotal() + "円 / 年");
+				continue;
 
-			case "5":
+			}
+			if (input == 6) {
 				System.out.println("\n--- 断捨離診断 ---");
 				int wastedCost = service.calculateWastedYearlyCost();
 				System.out.println("使っていないサブスクによる年間ロス金額: " + wastedCost + "円");
-				break;
+				continue;
 
-			case "0":
+			}
+			if (input == 0) {
 				System.out.println("アプリを終了します。お疲れ様でした！");
 				return;
 
-			default:
+			} else {
 				System.out.println("無効な選択です。0〜4の番号を入力してください。");
-				break;
+				continue;
 			}
-			scanner.close();
 		}
+
 	}
 }

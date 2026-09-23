@@ -98,6 +98,7 @@ public class ConsoleController {
 
 		UsageFrequency frequency = frequencies[freqIndex];
 
+		// idの自動生成
 		String id = UUID.randomUUID().toString().substring(0, 8);
 
 		Subscription newSub = new Subscription(

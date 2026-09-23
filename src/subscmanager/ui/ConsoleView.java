@@ -32,8 +32,4 @@ public class ConsoleView {
 		}
 		System.out.println();
 	}
-
-	public void showError(String message) {
-		System.out.println("【入力エラー】: " + message);
-	}
 }
