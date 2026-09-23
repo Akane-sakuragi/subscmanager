@@ -16,7 +16,6 @@ public class Main {
 		ConsoleView view = new ConsoleView();
 
 		ConsoleController controller = new ConsoleController(repository);
-		//		, service, view
 
 		System.out.println("=== サブスクリプション管理アプリへようこそ ===");
 		while (true) {

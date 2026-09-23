@@ -13,14 +13,9 @@ import subscmanager.repository.SubscriptionRepository;
 public class ConsoleController {
 	Scanner scanner = new Scanner(System.in);
 	private final SubscriptionRepository repository;
-	//	private final SubscriptionService service;
-	//	private final ConsoleView view;
 
 	public ConsoleController(SubscriptionRepository repository) {
 		this.repository = repository;
-		//		this.service = service;
-		//		this.view = view;
-		//		, SubscriptionService service, ConsoleView view
 	}
 
 	public void subscCreate() {
